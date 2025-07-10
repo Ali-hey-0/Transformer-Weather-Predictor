@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast - Interactive Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/style.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/forecast" class="nav-link active">
+                    <i class="fas fa-chart-line"></i> Forecast
+                </a>
+                <a href="/docs" class="nav-link">
+                    <i class="fas fa-book"></i> API Docs
+                </a>
+            </nav>
+        </header>
+
+        <main class="forecast-content">
+            <div class="forecast-header">
+                <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+                <p>72-hour temperature prediction using AI Transformer model</p>
+                <button id="refreshBtn" class="btn btn-primary">
+                    <i class="fas fa-sync-alt"></i> Refresh Forecast
+                </button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading forecast data...</p>
+            </div>
+
+            <div class="forecast-grid" id="forecastGrid" style="display: none;">
+                <div class="chart-container">
+                    <h3>Temperature Forecast</h3>
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-thermometer-half"></i>
+                        <h4>Average Temperature</h4>
+                        <p id="avgTemp">--°C</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-up"></i>
+                        <h4>Highest Temperature</h4>
+                        <p id="maxTemp">--°C</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-down"></i>
+                        <h4>Lowest Temperature</h4>
+                        <p id="minTemp">--°C</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Forecast Period</h4>
+                        <p id="forecastPeriod">72 hours</p>
+                    </div>
+                </div>
+
+                <div class="hourly-forecast">
+                    <h3>Hourly Breakdown</h3>
+                    <div class="hourly-grid" id="hourlyGrid">
+                        <!-- Hourly data will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Error Loading Forecast</h3>
+                <p id="errorText">Unable to load forecast data. Please try again.</p>
+                <button class="btn btn-primary" onclick="loadForecast()">Retry</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Weather Forecasting API. Built with FastAPI and Transformer models.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', path='/js/forecast.js') }}"></script>
+</body>
+</html>

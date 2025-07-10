@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecasting API</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1><i class="fas fa-cloud-sun"></i> Weather Forecasting API</h1>
+                <p class="subtitle">Advanced temperature prediction using Transformer neural networks</p>
+                <div class="hero-buttons">
+                    <a href="/forecast" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i> View Forecast
+                    </a>
+                    <a href="/docs" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> API Documentation
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="features">
+                <h2>Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI-Powered</h3>
+                        <p>Uses state-of-the-art Transformer architecture for accurate predictions</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>72-Hour Forecast</h3>
+                        <p>Get detailed temperature predictions for the next 3 days</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-code"></i>
+                        <h3>RESTful API</h3>
+                        <p>Easy-to-use API endpoints for integration with your applications</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Interactive Charts</h3>
+                        <p>Beautiful visualizations of weather data and predictions</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="api-info">
+                <h2>API Endpoints</h2>
+                <div class="endpoint-list">
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <span class="path">/api/predict</span>
+                        <span class="description">Get temperature forecast for next 72 hours</span>
+                    </div>
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <span class="path">/forecast</span>
+                        <span class="description">Interactive forecast visualization</span>
+                    </div>
+                    <div class="endpoint">
+                        <span class="method get">GET</span>
+                        <span class="path">/docs</span>
+                        <span class="description">Interactive API documentation</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Weather Forecasting API. Built with FastAPI and Transformer models.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+</body>
+</html>
