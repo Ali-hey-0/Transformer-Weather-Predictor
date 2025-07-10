@@ -173,7 +173,7 @@ cython_debug/
 *.hdf5
 *.model
 *.weights
-checkpoints/
+# checkpoints/
 models/
 saved_models/
 trained_models/
@@ -247,7 +247,7 @@ Temporary Items
 # images/
 
 # Jupyter notebook checkpoints
-.ipynb_checkpoints/
+# .ipynb_checkpoints/
 
 # Environment variables
 .env.local
