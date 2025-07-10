@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
+![PyTorch](https://img.shields.io/badge/PyTorch-Transformer-red?logo=pytorch)
+![FastAPI](https://img.shields.io/badge/API-FastAPI-green?logo=fastapi)
+![License](https://img.shields.io/github/license/Ali-hey-0/Transformer-Weather-Predictor)
+
+
 # 🌤️ Time Series Weather Forecasting with Transformer
 
 A deep learning project that uses Transformer architecture to predict weather conditions, specifically temperature forecasts for the next 72 hours. This project combines state-of-the-art transformer models with time series analysis to provide accurate weather predictions.
